@@ -1,0 +1,61 @@
+# config/config.yaml
+
+# Dataset Configuration
+dataset:
+  name: "PlantVillage"
+  raw_path: "data/raw/plantvillage"
+  processed_path: "data/processed"
+  img_size: [224, 224]
+  batch_size: 32
+  num_workers: 4
+  split_ratio:
+    train: 0.7
+    val: 0.15
+    test: 0.15
+  augmentation: true
+
+# Model Configuration
+model:
+  architecture: "resnet50"  # Options: resnet50, efficientnet_b0, mobilenet_v2, custom_cnn
+  pretrained: true
+  num_classes: 38
+  dropout_rate: 0.3
+  freeze_backbone: false
+
+# Training Configuration
+training:
+  epochs: 50
+  learning_rate: 0.0001
+  optimizer: "adam"  # Options: adam, sgd, adamw
+  loss_function: "categorical_crossentropy"
+  early_stopping:
+    patience: 10
+    min_delta: 0.001
+  reduce_lr:
+    patience: 5
+    factor: 0.5
+    min_lr: 0.000001
+  checkpoint:
+    save_best_only: true
+    monitor: "val_accuracy"
+    mode: "max"
+
+# Paths
+paths:
+  models_dir: "models/saved_models"
+  logs_dir: "logs"
+  tensorboard_dir: "logs/tensorboard"
+  results_dir: "results"
+
+# Streamlit Configuration
+streamlit:
+  title: "Crop Disease Detection System"
+  theme: "light"
+  max_upload_size: 10  # MB
+  confidence_threshold: 0.7
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log"
