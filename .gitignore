@@ -1,0 +1,69 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+
+# =========================
+# Virtual Environments
+# =========================
+.venv/
+venv/
+ENV/
+env/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+*.ipynb
+
+# =========================
+# Logs & temp
+# =========================
+*.log
+*.tmp
+
+# =========================
+# Environment variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Model files (VERY IMPORTANT)
+# =========================
+*.h5
+*.keras
+*.pb
+*.ckpt
+*.onnx
+models/
+checkpoints/
+
+# =========================
+# Dataset files (usually big)
+# =========================
+data/
+datasets/
+*.csv
+*.zip
+
+# =========================
+# OS / Editor
+# =========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# =========================
+# Build
+# =========================
+build/
+dist/
