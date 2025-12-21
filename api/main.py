@@ -45,7 +45,7 @@ async def predict(
     
     return {
         "class": predicted_class,
-        "confidence": confidence,
+        "confidence": confidence, 
         "predictions": {
             CLASS_NAMES[i]: float(predictions[0][i]) 
             for i in range(len(CLASS_NAMES))
